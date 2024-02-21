@@ -4,7 +4,7 @@ import { RenderOptions, render } from '@testing-library/react'
 import { PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 
-import { AppStore, RootState, configureStore } from '../store'
+import { AppStore, RootState, configuraStore } from '../store'
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>
@@ -15,7 +15,7 @@ export function renderizarComProvider(
   elemento: React.ReactElement,
   {
     preloadedState = {},
-    store = configureStore(preloadedState),
+    store = configuraStore(preloadedState),
     ...opcoesAdicionais
   }: ExtendedRenderOptions
 ) {
