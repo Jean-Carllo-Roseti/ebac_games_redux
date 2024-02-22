@@ -1,6 +1,7 @@
 import {
   combineReducers,
   configureStore,
+  // eslint-disable-next-line prettier/prettier
   PreloadedState
 } from '@reduxjs/toolkit'
 

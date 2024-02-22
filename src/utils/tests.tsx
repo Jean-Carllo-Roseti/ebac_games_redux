@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import { PreloadedState } from '@reduxjs/toolkit' // n sei o real motivo desde erro.
 import { RenderOptions, render } from '@testing-library/react'
 
