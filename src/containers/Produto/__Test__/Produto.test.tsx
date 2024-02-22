@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 
 import Produto from '..'
 import { renderizarComProvider } from '../../../utils/tests'
@@ -58,8 +58,17 @@ describe('Teste para containers Produtos', () => {
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
 
-  test('Deve renderizar corretamente', () => {
+  test('Deve renderizar corretamente o texto de carregamento', () => {
     renderizarComProvider(<Produto />)
     expect(screen.getByText('Carregando...')).toBeInTheDocument()
+  })
+
+  test('Deve renderizar corretamente a lista de jogos', async () => {
+    renderizarComProvider(<Produto />)
+    screen.debug()
+    await waitFor(() => {
+      screen.debug()
+      expect(screen.getByText('Hogwarts Legacy')).toBeInTheDocument()
+    })
   })
 })
