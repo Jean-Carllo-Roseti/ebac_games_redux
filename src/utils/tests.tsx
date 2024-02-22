@@ -1,4 +1,4 @@
-import { PreloadedState } from '@reduxjs/toolkit'
+import { PreloadedState } from '@reduxjs/toolkit' // n sei o real motivo desde erro.
 import { RenderOptions, render } from '@testing-library/react'
 
 import { PropsWithChildren } from 'react'
@@ -17,7 +17,7 @@ export function renderizarComProvider(
     preloadedState = {},
     store = configuraStore(preloadedState),
     ...opcoesAdicionais
-  }: ExtendedRenderOptions
+  }: ExtendedRenderOptions = {}
 ) {
   // eslint-disable-next-line @typescript-eslint/ban-types
   function Encapsulador({ children }: PropsWithChildren<{}>): JSX.Element {
